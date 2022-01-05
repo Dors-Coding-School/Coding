@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Lendas do CS50</title>
+        <script>
+            function blinkr()
+            {
+                let arrowr = document.querySelector('#arrowright');
+                if (arrowr.style.visibility === 'hidden')
+                {
+                    arrowr.style.visibility = 'visible';
+                }
+                else
+                {
+                    arrowr.style.visibility = 'hidden';
+                }
+            }
+            function blinkl()
+            {
+                let arrowl = document.querySelector('#arrowleft');
+                if (arrowl.style.visibility === 'hidden')
+                {
+                    arrowl.style.visibility = 'visible';
+                }
+                else
+                {
+                    arrowl.style.visibility = 'hidden';
+                }
+            }
+            window.setInterval(blinkr,600);
+            window.setInterval(blinkl,600);
+        </script>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+            <li class="breadcrumb-item"><a href="coursedescription.html">Descrição do curso</a></li>
+            <li class="breadcrumb-item"><a href="subreddit.html">Subreddit</a></li>
+            <li class="breadcrumb-item"><a href="syllabus.html">Depoimento</a></li>
+          </ol>
+        </nav>
+        <img src="lendas do cs50.png" alt="Imagem de Lendas do CS50" class="image">
+        <h1 class="bluetext"><b>Ementa CS50 - Introdução à Ciência da Computação</b></h1>
+        <p class="pinktext">Visite o nosso <strong>canal</strong>.</p>
+        <div class="text-center">
+            <i class="arrow right" id="arrowright"></i>
+            <button type="button" class="btn btn-outline-info"><a href="https://www.youtube.com/channel/UCDEa2WTQXVgeLX5aHk4pXFg">Lendas do CS50</a></button>
+            <i class="arrow left" id="arrowleft"></i>
+        </div>
+
+        <p><br></p>
+
+        <div class="container">
+          <div class="jumbotron">
+            <h1>Descrição do curso</h1>
+            <p>Este é o CS50x, a introdução da Universidade de Harvard aos empreendimentos intelectuais da ciência da computação e à arte da programação, tanto para majores quanto para não majores, com ou sem experiência anterior em programação.<br><br>Um curso de nível básico ministrado por David J. Malan, o CS50x ensina os alunos a pensar algoritmicamente e resolver problemas com eficiência. Os tópicos incluem abstração, algoritmos, estruturas de dados, encapsulamento, gerenciamento de recursos, segurança, engenharia de software e desenvolvimento web. As linguagens incluem C, PHP e JavaScript, além de SQL, CSS e HTML. Conjuntos de problemas inspirados por domínios do mundo real de biologia, criptografia, finanças, ciência forense e jogos.</p>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="jumbotron">
+            <h1>Subreddit</h1>
+            <p>Tire dúvidas, faça perguntas e aprenda com o melhor curso de programação da Internet, CS50!<br>Entre no nosso <a href="https://www.reddit.com/r/LendasDoCS50/">subreddit</a>!</p>
+          </div>
+        </div>
+
+        <h2 class="blacktext"><br><b>Programa de estudos</b></h2>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Semana</th>
+              <th scope="col">Aula</th>
+              <th scope="col">Conteúdo</th>
+              <th scope="col">Link para mais informações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">0</th>
+              <td>Scratch</td>
+              <td>Introdução<br>O que é ciência da computação?<br>Número binário<br>Representando dados<br>Algoritmos<br>Pseudocódigo<br>Scratch</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/0/">Scratch</a></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Linguagem C</td>
+              <td>Similaridades de Scratch e Linguagem C<br>Tipos de dados<br>Operações<br>Sentenças condicionais<br>Loops<br>Linha de comando<br>Memória, imprecisão e overflow</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/1/">Linguagem C</a></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Arrays</td>
+              <td>Funções<br>Variáveis e escopo<br>Arrays<br>Argumentos da linha de comando</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/2/">Arrays</a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Algoritmos</td>
+              <td>Busca linear<br>Busca binária<br>Bubble sort<br>Selection sort<br>Insertion Sort<br>Merge sort<br>Recursão<br>Big O<br>Structs</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/3/">Algoritmos</a></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Memória</td>
+              <td>Hexadecimal<br>Ponteiros<br>Definindo tipos customizados<br>Alocação de memória dinâmica<br>Call stacks<br>Ponteiro de pastas<br>JPEG</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/4/">Memória</a></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Estrutura de dados</td>
+              <td>Estrutura de dados<br>Singly-Linked List<br>Hash tables<br>Tries</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/5/">Estrutura de dados</a></td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Python</td>
+              <td>Comparação entre Linguagem C e Python<br>Python<br>Pastas</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/6/">Python</a></td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>SQL</td>
+              <td>SQL<br>IMDb<br>Múltiplas tabelas</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/7/">SQL</a></td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>Informação</td>
+              <td>Games<br>Mobile: Android e iOS<br>Web</td>
+              <td><a href="https://cs50.harvard.edu/x/2020/weeks/8/">Informação</a></td>
+            </tr>
+          </tbody>
+        </table>
+    </body>
+</html>
