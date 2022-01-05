@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Lendas do CS50</title>
+        <script>
+            function blinkr()
+            {
+                let arrowr = document.querySelector('#arrowright');
+                if (arrowr.style.visibility === 'hidden')
+                {
+                    arrowr.style.visibility = 'visible';
+                }
+                else
+                {
+                    arrowr.style.visibility = 'hidden';
+                }
+            }
+            function blinkl()
+            {
+                let arrowl = document.querySelector('#arrowleft');
+                if (arrowl.style.visibility === 'hidden')
+                {
+                    arrowl.style.visibility = 'visible';
+                }
+                else
+                {
+                    arrowl.style.visibility = 'hidden';
+                }
+            }
+            window.setInterval(blinkr,600);
+            window.setInterval(blinkl,600);
+        </script>
+    </head>
+    <body>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Descrição do curso</li>
+            <li class="breadcrumb-item"><a href="subreddit.html">Subreddit</a></li>
+            <li class="breadcrumb-item"><a href="syllabus.html">Depoimento</a></li>
+          </ol>
+        </nav>
+        <img src="lendas do cs50.png" alt="Imagem de Lendas do CS50" class="image">
+        <h1 class="bluetext"><b>Descrição do curso</b></h1>
+        <p class="pinktext">Visite o nosso <strong>canal</strong>.</p>
+        <div class="text-center">
+            <i class="arrow right" id="arrowright"></i>
+            <button type="button" class="btn btn-outline-info"><a href="https://www.youtube.com/channel/UCDEa2WTQXVgeLX5aHk4pXFg">Lendas do CS50</a></button>
+            <i class="arrow left" id="arrowleft"></i>
+        </div>
+    </body>
+</html>

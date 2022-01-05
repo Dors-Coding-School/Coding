@@ -1,0 +1,46 @@
+body 
+{
+    background-color: rgb(255, 255, 255);
+}
+.bluetext
+{
+    text-align: center;
+    color: rgb(44,153,181);
+}
+
+.pinktext
+{
+    text-align: center;
+    color: rgb(181, 44, 46);
+}
+.image
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+}
+.blacktext
+{
+    text-align: center;
+    color: rgb(84, 84, 84);
+}
+.arrow 
+{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right 
+{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left 
+{
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
