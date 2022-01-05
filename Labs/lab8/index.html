@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                // TODO: Add code to check answers to questions
+                // Multiple Choice
+                let correct_button = document.querySelector('#multiple-choice-correct');
+                let correct_message = document.querySelector("#multiple-choice-answer-text");
+                correct_button.addEventListener('click', function(){
+                       correct_button.style.backgroundColor = 'green';
+                       correct_message.innerHTML = 'Correct!';
+                       correct_message.style.color = 'green';
+                });
+
+                let wrong_buttons = document.querySelectorAll('.multiple-choice-wrong');
+                for (let i = 0; i < wrong_buttons.length; i++)
+                {
+                    wrong_buttons[i].addEventListener('click', function() {
+                        this.style.backgroundColor = 'red';
+                        correct_message.innerHTML = 'Incorrect!';
+                        correct_message.style.color = 'red';
+                    })
+                }
+
+                //Free Response
+                let free_response_button = document.querySelector('#free-response-button');
+                let free_response_message = document.querySelector("#free-response-answer-text");
+                free_response_button.addEventListener('click', function(){
+                       let free_response_input = document.querySelector('#free-response-answer');
+                       if(free_response_input.value === "Switzerland"){
+                           free_response_input.style.color = 'green';
+                           free_response_message.innerHTML = 'Correct!';
+                           free_response_message.style.color = 'green';
+                       }
+                       else{
+                           free_response_input.style.color = 'red';
+                           free_response_message.innerHTML = 'Incorrect!';
+                           free_response_message.style.color = 'red';
+                       }
+                });
+
+           });
+
+
+
+
+        </script>
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+                <!-- TODO: Add multiple choice question here -->
+
+                <button class="multiple-choice-wrong">6 people per 1 sheep</button>
+                <button class="multiple-choice-wrong">3 people per 1 sheep</button>
+                <button class="multiple-choice-wrong">1 people per 1 sheep</button>
+                <button class="multiple-choice-wrong">1 person per 3 sheep</button>
+                <button id="multiple-choice-correct">1 person per 6 sheep</button>
+                <p id="multiple-choice-answer-text"></p>
+            </div>
+
+
+            <div class="section">
+                <h2 class="free-response">Part 2: Free Response</h2>
+                <hr class="free-response">
+
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                <input type="text" id="free-response-answer" >
+                <input type="submit" id="free-response-button">
+                <p id="free-response-answer-text"></p>
+            </div>
+
+        </div>
+    </body>
+
+</html>
