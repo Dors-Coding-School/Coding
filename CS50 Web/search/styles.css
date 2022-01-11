@@ -1,0 +1,40 @@
+#search {
+    margin-top: 40px;
+}
+
+#google-icon {
+    height: 90px;
+    margin-top: 140px;
+}
+
+.buttons {
+    margin-top: 15px;
+    margin-left: 110px;
+}
+.btn {
+    background-color: #F6F6F6;
+}
+.input-icons i { 
+    position: absolute; 
+} 
+  
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 10px; 
+} 
+  
+.icon { 
+    padding: 10px; 
+    min-width: 40px; 
+} 
+  
+.input-field { 
+    width: 100%; 
+    padding: 10px; 
+    text-indent: 30px;
+} 
+
+#input {
+    width: 500px;
+    border-radius: 30px;
+}

@@ -1,0 +1,28 @@
+#icon { 
+    height: 40px; 
+    width: 120px; 
+} 
+
+#search-title {
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: 15px;
+    color: red;
+}
+#advanced-search {
+    margin-left: 45px;
+    margin-top: 30px;
+}
+
+#submit {
+    margin-top: 20px;
+    margin-left: 500px;
+}
+.text-field {
+    margin-left: 40px;
+    width: 800px;
+}
+
+#link-back{
+    margin-left: 900px;
+}
