@@ -1,6 +1,6 @@
 # CS50
 
-Solution of CS50 Labs and Problem Sets
+Solution of CS50 Labs and Problem Sets and CS50 Web Projects
 
 ––– DISCLAIMER –––
 
