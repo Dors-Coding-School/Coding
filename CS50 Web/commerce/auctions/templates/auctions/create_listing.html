@@ -1,0 +1,45 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Create Listing</h2>
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form action ="{% url 'create_listing'%}" method="post">
+      {% csrf_token %}
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Description</label>
+          <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Bid</label>
+          <input type="text" name="bid" class="form-control" id="exampleFormControlInput1">
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+            <select name="category" class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="Water">Water</option>
+                <option value="Fire">Fire</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Stone">Stone</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label>Image URL</label>
+          <input type="text" name="image_url" class="form-control" id="exampleFormControlInput1">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+{% endblock %}

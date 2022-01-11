@@ -1,0 +1,93 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+ 
+ <div class="jumbotron jumbotron-fluid">
+   {% if listing.is_closed and user == listing.bid.user %}  
+     <div class="alert alert-success" role="alert">
+            Congratulations {{ listing.bid.user }}, you won the Auction!
+     </div> 
+   {% endif %}
+
+   {% if is_owner and not listing.is_closed%}  
+      <a class="btn btn-info" id="close-auction" href="{% url 'close_auction' listing.id%}"> Close Auction </a>
+   {% endif %}
+
+
+    <div class="container">
+      {% if message %}
+               {% if updated %}
+                  <div class="alert alert-success" role="alert">
+                        {{ message }}
+                  </div> 
+               {% else %}
+                  <div class="alert alert-danger" role="alert">
+                      {{ message }}
+                </div> 
+               {% endif %}
+     {% endif %}
+     
+      <span class="badge badge-pill badge-warning">{{ listing.category }}</span>
+      <h1>{{listing.title }}</h1> 
+      <img  src="{{listing.url}}" alt="Listing picture">  
+      <p> {{ listing.description }} </p>
+      <p id="bid">Current bid: <span id="price">{{ listing.bid }}</span></p>
+      
+      
+      {% if user.is_authenticated and not listing.is_closed%}
+            <form action ="{% url 'new_bid' listing.id%}" method="post">
+             {% csrf_token %}
+            <div class="form-group">
+              <label>New Bid</label>
+              <input type="text" name="bid" class="form-control" id="exampleFormControlInput1">
+             </div>
+
+            <button id="bid-button" class="btn btn-primary" type="submit">Make a new bid</button>
+            </form>
+
+            {% if is_listing_in_watchlist%}  
+                  <a class="btn btn-danger" href="{% url 'remove_watchlist' listing.id %}"> Remove from watchlist </a>
+            {% else %}
+                  <a class="btn btn-primary" href="{% url 'add_watchlist' listing.id %}"> Add to watchlist </a>
+            {% endif %}
+
+
+             <form action ="{% url 'comment' listing.id%}" method="post">
+             {% csrf_token %}
+                  <div class="container pb-cmnt-container">
+                  <div class="row">
+                        <div class="col-md-12">
+                              <div class="card card-info">
+                              <div class="card-block">
+                                    <textarea name="comment" placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
+                                    <form class="form-inline">
+                                          <div class="btn-group">
+                                          <button class="btn" type="button"><span class="fa fa-picture-o fa-lg"></span></button>
+                                          <button class="btn" type="button"><span class="fa fa-video-camera fa-lg"></span></button>
+                                          <button class="btn" type="button"><span class="fa fa-microphone fa-lg"></span></button>
+                                          <button class="btn" type="button"><span class="fa fa-music fa-lg"></span></button>
+                                          </div>
+                                          <input type="submit" class="btn btn-primary float-xs-right" type="button"></button>
+                                    </form>
+                              </div>
+                              </div>
+                        </div>
+                  </div>
+                  </div>     
+            </form> 
+      {% endif %}  
+    </div>  
+   </div>
+  </div>
+  <h2>Comments </h2>
+  {% for comment in comments %}
+      <div class="card">
+            <div class="card-header">
+            Written by {{comment.writer}}
+            </div>
+            <div class="card-body">
+            <p class="card-text">{{comment.text}}</p>
+            </div>
+      </div>
+  {% endfor %}
+{% endblock %}
