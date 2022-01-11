@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'save' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Entry Title</label>
+          <input type="text" name ="title" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Entry Text</label>
+          <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="8"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+      </form>
+{% endblock %}
