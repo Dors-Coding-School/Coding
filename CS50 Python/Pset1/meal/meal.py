@@ -19,10 +19,7 @@ def main():
 def convert(time):
     hours, minutes = time.split(":")
 
-    if minutes == "0" or minutes == "00":
-        converted_minutes = 0
-    else:
-        converted_minutes = int(minutes) / 60
+    converted_minutes = int(minutes) / 60
 
     return int(hours) + converted_minutes
 
