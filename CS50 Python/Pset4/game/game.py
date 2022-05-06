@@ -1,24 +1,26 @@
 import random
-import sys
 
+# Get level
 while True:
     try:
         level = int(input("Level: "))
-        if level >= 1 and level <= 100:
+        if level > 0:
             break
     except:
         pass
 
-random_number = random.randint(1,level)
+# Set random number
+random_number = random.randint(1, level)
 
+# Get guess and check
 while True:
     try:
         guess = int(input("Guess: "))
-        if guess >= 1:
-            if guess > random_number:
-                print("Too large!")
-            elif guess < random_number:
+        if guess > 0:
+            if guess < random_number:
                 print("Too small!")
+            elif guess > random_number:
+                print("Too large!")
             else:
                 print("Just right!")
                 break
