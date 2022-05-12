@@ -28,6 +28,11 @@ def is_valid(s):
                 break
         i += 1
 
+    for i in range(len(s)):
+        if s[i].isdigit():
+            if not s[i:].isdigit():
+                return False
+
     # No periods, spaces, or punctuation marks are allowed
     for c in s:
         if c in ['.', ' ', '!', '?']:
@@ -37,4 +42,5 @@ def is_valid(s):
     return True
 
 
-main()
+if __name__ == "__main__":
+    main()
