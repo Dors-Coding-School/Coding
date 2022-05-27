@@ -22,9 +22,15 @@ def convert(s):
 
 def new_format(hour, minutes, am_pm):
     if am_pm == 'PM':
-        new_hour = int(hour) + 12
+        if int(hour) == 12:
+            new_hour = 12
+        else:
+            new_hour = int(hour) + 12
     else:
-        new_hour = int(hour)
+        if int(hour) == 12:
+            new_hour = 0
+        else:
+            new_hour = int(hour)
     if minutes == "":
         new_time = f"{new_hour:02}" + ":00"
     else:
