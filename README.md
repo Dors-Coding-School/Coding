@@ -1,6 +1,8 @@
-# CS50
+# Coding Resources
 
-Solution of CS50 Labs and Problem Sets and CS50 Web Projects
+In this repository you will find all the solutions for CS50, CS50 Python, CS50 Web, CS50 AI, The Odin Project and FreeCodeCamp.
+
+If you want to have full support from a programming expert, check this out: [(https://www.dorscodingschool.com/products)]
 
 ––– DISCLAIMER –––
 
