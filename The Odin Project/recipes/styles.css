@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+h3{
+    color: brown;
+    margin: 0;
+}
+
+h4{
+    font-size: 25px;
+    margin: 0;
+}
+
+a{
+    margin: 10px;
+    color: black;
+    font-size: 20px;
+}
