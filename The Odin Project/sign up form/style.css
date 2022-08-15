@@ -1,0 +1,155 @@
+@font-face {
+    font-family: Norse-Bold;
+    src: url(../fonts/Norse-Bold.otf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left{
+    background-image: url('./images/halie-west-25xggax4bSA-unsplash.jpg');
+    width: 35vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    width: 65vw;
+}
+
+.first{
+    height: 25vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.second{
+    background-color: white;
+    height: 33vh;
+    align-items: center;
+    box-shadow: 2px 5px #E5E7EB;
+}
+
+.form-main-div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    width: 60%;
+    justify-content: space-between;
+}
+
+
+.form-div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+input{
+    width: 200px;
+    border: 1px solid #E5E7EB;
+    height: 25px;
+    border-radius: 5px;
+}
+
+input:focus{
+    border: 1px solid blue;
+}
+
+input:invalid{
+    border: 1px solid red;
+}
+
+label{
+    font-size: 10px;
+    color: #3b3b3c;
+}
+
+#error{
+    color: red;
+    font-size: 10px;
+    margin: 1px;
+}
+
+.btn-green{
+    background-color: #596D48;
+    color: white;
+    border: 1px solid #596D48;
+    border-radius: 10px;
+    height: 40px;
+    width: 175px;
+    font-weight: bolder;
+    font-size:small;
+    box-shadow: 2px 5px #E5E7EB;
+}
+
+.third{
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
+.hyperlink{
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
+.login{
+    color: #596D48;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.a-footer{
+    color: white;
+}
+
+.p-footer{
+    font-size: 12px;
+}
+
+.forImage{
+    height: 34vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.forFooter{
+    height: 60vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.semi-transparent{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+h1{
+    font-size: 50px;
+    font-family: Norse-Bold;
+}
