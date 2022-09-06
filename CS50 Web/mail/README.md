@@ -1,2 +1,2 @@
-#CS50 Web
+CS50 Web
 Project 3 - Mail
