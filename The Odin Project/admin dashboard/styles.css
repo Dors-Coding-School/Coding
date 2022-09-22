@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    background-color: #0ea5e9;
+    height: 100vh;
+    color: white;
+}
+
+.logo-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 40px 40px;
+}
+
+.logo-text h1{
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.icon-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 40px;
+}
+
+.icon-text p{
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.list-items-bottom{
+    margin-top: 50px;
+}
+
+/* MAIN SCREEN */
+
+.main{
+    background-color: white;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+.header{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar, .left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 20px;
+}
+
+.form-input{
+    width: 500px;
+    background-color: #d4d4d4;
+    border-radius: 10px;
+    border: 1px solid #d4d4d4;
+    margin-left: 20px;
+    margin-right: 200px;
+}
+
+.avatarNavbar, .avatarWelcome{
+    margin: 0 20px;
+}
+
+.welcome{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 20px;
+}
+
+.right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin-right: 30px;
+}
+
+.btn{
+    background-color: #0ea5e9;
+    width: 70px;
+    height: 35px;
+    color: white;
+    border: 1px solid #0ea5e9;
+    border-radius: 20px;
+}
+
+.content{
+    background-color: #d4d4d4;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.card{
+    background-color: white;
+    border-left: 5px solid #facc15;
+    border-radius: 10px;
+    width: 80%;
+    height: 150px;
+    margin: 15px 0;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+}
+
+h6{
+    font-size: 18px;
+}
+
+.card p{
+    font-size: 14px;
+    color: #737373;
+    margin: 10px 0;
+}
+
+h4{
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.ann-trend{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.ann-card, .trend-card{
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.ann-text{
+    padding: 10px 15px;
+}
+
+.ann-text h6, .trend-text h6{
+    font-size: 13px;
+}
+
+.ann-text p, .trend-text p{
+    font-size: 11px;
+    color: #737373;
+}
+
+.divider{
+    border: 0.5px solid #737373;
+    width: 80%;
+    margin-left: 20px;
+}
+
+.trend-image-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 20px;
+    padding: 13px 0;
+}
+
+.trend-text{
+    margin-left: 20px;
+}
