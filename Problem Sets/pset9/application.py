@@ -76,23 +76,25 @@ def buy():
 
         # Ensure stock was submitted
         if not request.form.get("symbol"):
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol")
 
         # Ensure shares was submitted
         elif not request.form.get("shares"):
-            return apology("must provide shares", 403)
+            return apology("must provide shares")
 
         # Ensure shares is greater than 0
         elif int(request.form.get("shares")) < 0:
-            return apology("must provide a valid number of shares", 403)
+            return apology("must provide a valid number of shares")
 
         # Ensure shock exists
         if not request.form.get("symbol"):
-            return apology("must provide an existing symbol", 403)
+            return apology("must provide an existing symbol")
 
         # Lookup function
         symbol = request.form.get("symbol").upper()
         stock = lookup(symbol)
+        if stock is None:
+            return apology("symbol does not exist")
 
         # Value of transaction
         shares = int(request.form.get("shares"))
@@ -106,7 +108,7 @@ def buy():
         updt_cash = cash - transactionb
 
         if updt_cash < 0:
-            return apology("you do not have enough cash", 403)
+            return apology("you do not have enough cash")
 
         # Update how much left in his account (cash) after the transaction
         db.execute("UPDATE users SET cash=:updt_cash WHERE id=:id", updt_cash=updt_cash, id=session["user_id"]);
@@ -217,26 +219,26 @@ def register():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("must provide username")
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("must provide password")
 
         # Ensure password was submitted
-        elif not request.form.get("password_confirm"):
-            return apology("must provide password confirmation", 403)
+        elif not request.form.get("confirmation"):
+            return apology("must provide password confirmation")
 
         # Ensure confirmation password is equal to password
-        elif request.form.get("password") != request.form.get("password_confirm"):
-            return apology("password dont match", 403)
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("password dont match")
         try:
             # Add into db
-            new_user = db.execute("INSERT INTO users (username, hash) VALUES (:username, :hash)", username=request.form.get("username"), hash=generate_password_hash(request.form.get("password")))
+            new_user = db.execute("INSERT INTO users (username, hash) VALUES (?,?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
 
         except:
             # Check if its unique
-            return apology("username is already registered", 403)
+            return apology("username is already registered")
 
         # Remember the user
         session["user_id"] = new_user
@@ -258,19 +260,19 @@ def sell():
 
         # Ensure stock was submitted
         if not request.form.get("symbol"):
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol")
 
         # Ensure shares was submitted
         elif not request.form.get("shares"):
-            return apology("must provide shares", 403)
+            return apology("must provide shares")
 
         # Ensure shares is greater than 0
         elif int(request.form.get("shares")) < 0:
-            return apology("must provide a valid number of shares", 403)
+            return apology("must provide a valid number of shares")
 
         # Ensure shock exists
         if not request.form.get("symbol"):
-            return apology("must provide an existing symbol", 403)
+            return apology("must provide an existing symbol")
 
         # Lookup function
         symbol = request.form.get("symbol").upper()
@@ -283,7 +285,7 @@ def sell():
         for row in rows:
             if row["symbol"] == symbol:
                 if shares > row["SUM(shares)"]:
-                    return apology("you're doing something wrong", 403)
+                    return apology("you're doing something wrong")
 
         transaction = shares * stock['price']
 
