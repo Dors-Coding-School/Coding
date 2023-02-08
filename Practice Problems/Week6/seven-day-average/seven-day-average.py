@@ -35,17 +35,25 @@ def main():
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
     new_cases = dict()
+    previous_cases = dict()
 
     for row in reader:
         state = row['state']
         date = row['date']
-        today_cases = int(row['cases'])
+        cases = int(row['cases'])
 
-        if state not in new_cases:
+        if state not in previous_cases:
+            previous_cases[state] = cases
             new_cases[state] = []
-        if len(new_cases[state]) >= 14:
-            new_cases[state].pop(0)
-        new_cases[state].append(today_cases)
+        else:
+            new_case = cases - previous_cases[state]
+            previous_cases[state] = cases
+
+            if state not in new_cases:
+                new_cases[state] = []
+            if len(new_cases[state]) >= 14:
+                new_cases[state].pop(0)
+            new_cases[state].append(new_case)
 
     return new_cases
 
@@ -74,3 +82,4 @@ def comparative_averages(new_cases, states):
         print(f"{state} had a 7-day average of {avg_recent} and {msg} of {p}%.")
 
 main()
+
