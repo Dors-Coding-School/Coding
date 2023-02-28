@@ -1,0 +1,128 @@
+#new-book-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}  
+
+form {
+    width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: 0.3s;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #444;
+  }
+
+  .book-card {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .book-header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .book-title {
+    margin: 0;
+    font-size: 22px;
+  }
+  
+  .book-author {
+    margin: 5px 0 0 0;
+    font-size: 18px;
+  }
+  
+  .book-body {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .book-pages {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .book-status {
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    cursor: pointer;
+  }
+    
+  button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .read-status {
+    background-color:rgb(145, 145, 226);
+  }
