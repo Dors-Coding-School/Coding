@@ -53,13 +53,27 @@ function love.update(dt)
     if gameState == 'play' then
         ballX = ballX + ballDX * dt
         ballY = ballY + ballDY * dt
-        if ballX <= 0 then
-            player2Score = player2Score + 1
-            resetBall()
-        elseif ballX >= VIRTUAL_WIDTH - 5 then
-            player1Score = player1Score + 1
-            resetBall()
+    end
+
+    if ballDX > 0 then
+        local targetY = ballY + 5
+        local centerY = player2Y + 10
+        local deltaY = targetY - centerY
+        if math.abs(deltaY) < paddle_speed * dt then
+            player2Y = targetY - 10
+        elseif deltaY < 0 then
+            player2Y = math.max(0, player2Y - paddle_speed * dt)
+        elseif deltaY > 0 then
+            player2Y = math.min(VIRTUAL_HEIGHT, player2Y + paddle_speed * dt)
         end
+    end
+
+    if ballX <= 0 then
+        player2Score = player2Score + 1
+        resetBall()
+    elseif ballX >= VIRTUAL_WIDTH - 5 then
+        player1Score = player1Score + 1
+        resetBall()
     end
 
     if ballX <= 15 and ballY >= player1Y and ballY <= player1Y + 20 then
