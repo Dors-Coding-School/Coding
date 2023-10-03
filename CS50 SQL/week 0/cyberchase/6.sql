@@ -1,2 +1,2 @@
-SELECT ROUND(AVG(entropy),2) AS 'Hiroshige Average Entropy' FROM views
-WHERE artist = "Hiroshige";
+SELECT title FROM episodes
+WHERE season = 6 AND air_date < "2008-01-01";
