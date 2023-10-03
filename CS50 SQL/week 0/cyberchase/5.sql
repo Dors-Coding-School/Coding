@@ -1,2 +1,2 @@
-SELECT COUNT(english_title) FROM views
-WHERE artist = "Hiroshige" AND english_title LIKE "%Eastern Capital%";
+SELECT title FROM episodes
+WHERE air_date = "2004-12-31";
