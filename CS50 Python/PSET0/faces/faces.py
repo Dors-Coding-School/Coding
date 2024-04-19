@@ -8,10 +8,10 @@ def main():
 
 def convert(msg):
     # Replace :) for happy emoji
-    msg1 = msg.replace(":)", '🙂')
+    msg = msg.replace(":)", '🙂')
     # Replace :( for sad emoji
-    msg2 = msg1.replace(":(", '🙁')
+    msg = msg.replace(":(", '🙁')
     # Return string
-    return msg2
+    return msg
 
 main()
