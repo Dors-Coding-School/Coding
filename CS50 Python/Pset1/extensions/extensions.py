@@ -5,19 +5,19 @@ filename = input("Name of the file: ")
 new_filename = filename.lower().strip()
 
 # Check types
-if ".gif" in new_filename:
+if new_filename.endswith(".gif"):
     print("image/gif")
-elif ".jpg" in new_filename:
+elif new_filename.endswith(".jpg"):
     print("image/jpg")
-elif ".jpeg" in new_filename:
+elif new_filename.endswith(".jpeg"):
     print("image/jpeg")
-elif ".png" in new_filename:
+elif new_filename.endswith(".png"):
     print("image/png")
-elif ".pdf" in new_filename:
+elif new_filename.endswith(".pdf"):
     print("application/pdf")
-elif ".zip" in new_filename:
+elif new_filename.endswith(".zip"):
     print("application/zip")
-elif ".txt" in new_filename:
+elif new_filename.endswith(".txt"):
     print("text/plain")
 # Otherwise, print "application/octet-stream"
 else:
