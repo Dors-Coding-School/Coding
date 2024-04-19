@@ -1,18 +1,15 @@
 # Get user input
 camelCase = input("camelCase: ")
 
-# Print "snake_case: "
-print("snake_case: ", end="")
+# Create empty string
+snake_case = ""
 
 # Loop through every letter
 for letter in camelCase:
-    # Check if letter is uppercase
     if letter.isupper():
-        # Print underscores and the letter in lowercase
-        print("_" + letter.lower(), end="")
-    # Otherwise, print letter
+        snake_case += "_" + letter.lower()
     else:
-        print(letter, end="")
+        snake_case += letter
         
-# Print so the cursor goes to the next line
-print()
+# Print the output
+print("snake_case: " + snake_case)
