@@ -1,7 +1,9 @@
 # Get user input
 filename = input("Name of the file: ")
+
 # Remove spaces and make it all lower
 new_filename = filename.lower().strip()
+
 # Check types
 if ".gif" in new_filename:
     print("image/gif")
