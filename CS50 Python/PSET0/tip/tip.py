@@ -6,15 +6,22 @@ def main():
 
 
 def dollars_to_float(d):
-    # TODO
+    # Remove "$" from string d
     without_dollar_sign_d = d.replace("$","")
-    return float(without_dollar_sign_d)
+    # Convert string into float
+    without_dollar_sign_d = float(without_dollar_sign_d)
+    # Return float to store in variable dollars (line 2)
+    return without_dollar_sign_d
 
 
 def percent_to_float(p):
-    # TODO
+    # Remove "%" from string p
     without_percentage_sign_p = p.replace("%","")
-    p_times_100 = float(without_percentage_sign_p) / 100
+    # Convert string into float
+    without_percentage_sign_p = float(without_percentage_sign_p)
+    # Convert number to percentage
+    p_times_100 = without_percentage_sign_p / 100
+    # Return float to store in variable percent (line 3)
     return p_times_100
 
 
