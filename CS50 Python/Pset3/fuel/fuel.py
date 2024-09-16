@@ -9,7 +9,7 @@ while True:
             break
     except (ValueError, ZeroDivisionError):
         pass
-new_p = int(p * 100)
+new_p = int(round(p * 100))
 if new_p <= 1:
     print("E")
 elif new_p >= 99:
