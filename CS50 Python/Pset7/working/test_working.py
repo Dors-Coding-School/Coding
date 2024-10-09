@@ -1,13 +1,6 @@
 from working import convert
 import pytest
 
-
-def main():
-    test_wrong_format()
-    test_time()
-    test_wrong_hour()
-    test_wrong_minute()
-
 # test ValueError
 def test_wrong_format():
     with pytest.raises(ValueError):
@@ -28,7 +21,3 @@ def test_wrong_hour():
 def test_wrong_minute():
     with pytest.raises(ValueError):
         convert('9:60 AM to 5:60 PM')
-
-
-if __name__ == "__main__":
-    main()
