@@ -1,10 +1,5 @@
 from jar import Jar
 
-def main():
-    test_init()
-    test_str()
-    test_deposit()
-
 def test_init():
     jar = Jar()
     assert jar.capacity == 12
