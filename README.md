@@ -2,7 +2,7 @@
 
 In this repository you will find all the solutions for CS50, CS50 Python, CS50 Web, CS50 AI, The Odin Project and FreeCodeCamp.
 
-If you want to have full support from a programming expert, check this out: https://www.dorscodingschool.com/products
+If you want to have full support from a programming expert, check this out: [https://www.dorscodingschool.com/products](https://codingdors.com/coachingplans)
 
 ––– DISCLAIMER –––
 
