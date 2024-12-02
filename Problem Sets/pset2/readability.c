@@ -21,7 +21,7 @@ int main(int argc, string argv[])
 
     int gradeLevel = getGradeLevel(numLetters, numSentences, numWords);
 
-    GradeLevel(gradeLevel);
+    printGradeLevel(gradeLevel);
 
 }
 
