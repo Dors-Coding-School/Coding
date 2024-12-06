@@ -47,6 +47,12 @@ int main(int argc, char *argv[])
             fwrite(buffer, BLOCK_SIZE, 1, image);
         }
     }
+    // Close any open files at the end
+    if (image != NULL)
+    {
+        fclose(image);
+    }
+    fclose(raw);
 }
 
 void checkArgumentCount(int argc)
