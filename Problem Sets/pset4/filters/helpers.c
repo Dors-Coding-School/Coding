@@ -1,8 +1,6 @@
 #include "helpers.h"
 #include <math.h>
 #define MAX_RGB_VALUE 255
-#define COLUMN_TO_LEFT -1
-#define COLUMN_TO_RIGHT 1
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -67,38 +65,52 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE returnImage[height][width];
-    for (int h = 0; h < height; h++)
+    RGBTRIPLE temp[height][width];
+
+    for (int i = 0; i < height; i++)
     {
-        for (int w = 0; w < width; w++)
+        for (int j = 0; j < width; j++)
         {
-            returnImage[h][w] = image[h][w];
-        }
-    }
-    for (int h = 0; h < height; h++)
-    {
-        for (int w = 0; w < width; w++)
-        {
-           
-            int blueAver = 0;
-            int greenAver = 0;
-            int redAver = 0;
-            double count = 0;
-            for (int offset_x = ROW_ABOVE; offset_x <= ROW_BELOW; offset_x++)
+            float sumBlue = 0;
+            float sumGreen = 0;
+            float sumRed = 0;
+            float counter = 0;
+
+            for (int r = -1; r < 2; r++)
             {
-                 for (int offset_y =COLUMN_TO_LEFT ; offset_y < COLUMN_TO_RIGHT; offset_y++)
-                 {
-                     
-                 }
+                for (int c = -1; c < 2; c++)
+                {
+                    if (i + r < 0 || i + r > height - 1)
+                    {
+                        continue;
+                    }
+
+                    if (j + c < 0 || j + c > width - 1)
+                    {
+                        continue;
+                    }
+
+                    sumBlue += image[i + r][j + c].rgbtBlue;
+                    sumGreen += image[i + r][j + c].rgbtGreen;
+                    sumRed += image[i + r][j + c].rgbtRed;
+                    counter++;
+                }
             }
-    
-            }
-            image[h][w].rgbtBlue = round(blueAver/count);
-            image[h][w].rgbtGreen = round(greenAver/count);
-            image[h][w].rgbtRed = round(redAver/count);
-           
+
+            temp[i][j].rgbtBlue = round(sumBlue / counter);
+            temp[i][j].rgbtGreen = round(sumGreen / counter);
+            temp[i][j].rgbtRed = round(sumRed / counter);
         }
     }
-    return;
-   
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
+            image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
+            image[i][j].rgbtRed = temp[i][j].rgbtRed;
+        }
+
+    }
 }
