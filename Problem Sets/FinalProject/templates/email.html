@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sent
+{% endblock %}
+
+{% block main %}
+    <div>
+            <div class="list-group-item">
+                <h6>sender: {{emailDetail.sender}}</h6>
+                <h6>recipient: {{emailDetail.recipient}}</h6>
+                <h6>subject: {{emailDetail.subject}}</h6>
+                <h6>body: {{emailDetail.body}}</h6>
+                <h6>timestamp: {{emailDetail.timestamp}}</h6>
+                <form action="reply" method="post">
+                    <input type="hidden" name="emailId" value="{{ emailDetail.id}}">
+                    <input type="submit" value="Reply" class="btn btn-primary">
+                </form>
+            </div>
+    </div>
+{% endblock %}

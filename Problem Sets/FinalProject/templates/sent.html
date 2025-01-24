@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sent
+{% endblock %}
+
+{% block main %}
+    <div>
+        {% for email in emails %}
+            <div class="list-group-item">
+                <h6>sender: {{email.sender}}</h6>
+                <h6>recipient: {{email.recipient}}</h6>
+                <h6>subject: {{email.subject}}</h6>
+                <h6>body: {{email.body}}</h6>
+                <h6>timestamp: {{email.timestamp}}</h6>
+                <form action="email" method="post">
+                    <input type="hidden" name="emailId" value="{{ email.id}}">
+                    <input type="submit" value="View Email" class="btn btn-primary">
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
