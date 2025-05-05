@@ -12,10 +12,9 @@ else:
     sys.exit(1)
 
 try:
-    r = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    r = requests.get('rest.coincap.io/v3/assets/bitcoin?apiKey=YourApiKey')
     response = r.json()
-    bitcoin_to_USD = response['bpi']['USD']['rate']
-    bitcoin_to_USD = bitcoin_to_USD.replace(",","")
+    bitcoin_to_USD = response['data']['priceUsd']
     amount = float(bitcoin_to_USD) * float(sys.argv[1])
     print(f"${amount:,.4f}")
 
